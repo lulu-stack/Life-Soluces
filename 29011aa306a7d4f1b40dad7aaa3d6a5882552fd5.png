@@ -1,0 +1,123 @@
+import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
+
+export function Footer() {
+  const whatsappNumber1 = '5521995575121';
+  const whatsappNumber2 = '5521992576001';
+  const whatsappMessage = 'Olá! Gostaria de saber mais sobre empréstimos consignados.';
+
+  return (
+    <footer className="bg-gradient-to-r from-emerald-800 to-teal-700 text-white py-12 px-6 mt-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8">
+          <div>
+            <h3 className="text-2xl mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Life Soluções
+            </h3>
+            <p className="text-emerald-100 mb-4">
+              Sua solução em empréstimos consignados com transparência e as melhores taxas.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Contato
+            </h4>
+            <div className="space-y-3">
+              <a 
+                href={`https://wa.me/${whatsappNumber1}?text=${encodeURIComponent(whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-emerald-100 hover:text-white transition-colors group"
+              >
+                <div className="bg-green-500 p-2 rounded-lg group-hover:bg-green-400 transition-colors">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <span>(21) 99557-5121</span>
+              </a>
+              
+              <a 
+                href={`https://wa.me/${whatsappNumber2}?text=${encodeURIComponent(whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-emerald-100 hover:text-white transition-colors group"
+              >
+                <div className="bg-green-500 p-2 rounded-lg group-hover:bg-green-400 transition-colors">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <span>(21) 99257-6001</span>
+              </a>
+              
+              <a 
+                href="mailto:contato@lifesoluces.com.br"
+                className="flex items-center gap-3 text-emerald-100 hover:text-white transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                <span>Lifesolucoes@outlook.com</span>
+              </a>
+              
+              <div className="flex items-center gap-3 text-emerald-100">
+                <MapPin className="w-5 h-5" />
+                <span>Duque de Caxias, RJ</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-xl mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Redes Sociais
+            </h4>
+            <div className="flex gap-4">
+                        
+              <a
+                href="https://www.instagram.com/life_solucoes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-pink-600 p-3 rounded-full hover:bg-pink-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+
+               <a
+                href="https://www.instagram.com/grupolifesolucoes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-pink-600 p-3 rounded-full hover:bg-pink-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+            
+            </div>
+            
+            <div className="mt-6 space-y-3">
+              <a
+                href={`https://wa.me/${whatsappNumber1}?text=${encodeURIComponent(whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full transition-colors shadow-lg w-full justify-center"
+              >
+                <Phone className="w-5 h-5" />
+                <span>WhatsApp 1</span>
+              </a>
+              
+              <a
+                href={`https://wa.me/${whatsappNumber2}?text=${encodeURIComponent(whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full transition-colors shadow-lg w-full justify-center"
+              >
+                <Phone className="w-5 h-5" />
+                <span>WhatsApp 2</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-teal-700 pt-8 text-center text-emerald-200">
+          <p>&copy; 2026 Life Soluções - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

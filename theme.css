@@ -1,0 +1,63 @@
+import Slider from 'react-slick';
+import bankLogos from 'figma:asset/29011aa306a7d4f1b40dad7aaa3d6a5882552fd5.png';
+
+const images = [
+ {
+    url: bankLogos,
+    alt: 'Melhor opção de empréstimos consignados',
+    hasText: true,
+    text: 'Melhor opção de empréstimos consignados'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1681505526188-b05e68c77582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBjb25zdWx0YXRpb24lMjBoYW5kc2hha2V8ZW58MXx8fHwxNzcwNzU1OTg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    alt: 'Atendimento personalizado',
+    hasText: true,
+    text: 'Atendimento personalizado'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1758686253896-e6c76b6f7aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHNlbmlvciUyMHJldGlyZW1lbnR8ZW58MXx8fHwxNzcwNzU1OTg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    alt: 'Crédito consignado para aposentados',
+    hasText: true,
+    text:'Atendimento para aposentados'
+  },
+];
+
+export function ImageCarousel() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    arrows: true
+  };
+
+  return (
+    <section className="max-w-5xl mx-auto py-12 px-4">
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index} className="outline-none">
+            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              {image.hasText && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                  <h2 className="text-3xl md:text-5xl font-bold text-white text-center px-8 drop-shadow-2xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    {image.text}
+                  </h2>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </section>
+  );
+}
